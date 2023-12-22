@@ -53,7 +53,7 @@ const AddNewTask = () => {
                 <title>Create New Task || Task Management</title>
             </Helmet>
             <div className="divider"></div>
-            <h1 className="text-center text-2xl md:text-3xl font-bold my-2">Create New Task</h1>
+            <h1 className="text-center text-2xl md:text-3xl font-bold my-2 text-[#B58130]" data-aos="fade-down">Create New Task</h1>
             <div className="divider"></div>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -61,18 +61,18 @@ const AddNewTask = () => {
                     <div className="flex md:flex-row flex-col gap-6">
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text font-medium">Title Name*</span>
+                                <span className="label-text font-medium text-[#B58130]" >Title Name*</span>
                             </label>
                             <input {...register("titleName", { required: true })}
-
+                                data-aos="flip-left"
                                 type="text" placeholder="Enter Title Name"
                                 className="input input-bordered w-full" />
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-medium">Select Task Priority*</span>
+                                <span className="label-text font-medium text-[#B58130]">Select Task Priority*</span>
                             </label>
-                            <select defaultValue={'default'} {...register("priority", { required: true })}
+                            <select defaultValue={'default'} {...register("priority", { required: true })} data-aos="flip-right"
                                 className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select a Priority?</option>
                                 <option value="Low">Low</option>
@@ -85,34 +85,34 @@ const AddNewTask = () => {
                     <div className="flex md:flex-row flex-col gap-6 my-6">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-medium">Select Deadline*</span>
+                                <span className="label-text font-medium text-[#B58130]">Select Deadline*</span>
                             </label>
                             <input {...register("deadlines", { required: true })}
-
+                                data-aos="flip-right"
                                 type="date" placeholder="Enter Deadline"
                                 className="input input-bordered w-full" />
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-medium">Author Name*</span>
+                                <span className="label-text font-medium text-[#B58130]">Author Name*</span>
                             </label>
                             <input {...register("authorName", { required: true })}
-
+                                data-aos="flip-left"
                                 type="text" placeholder="Enter Author Name"
                                 className="input input-bordered w-full" />
                         </div>
                     </div>
                     <div className="form-control ">
                         <label className="label">
-                            <span className="label-text font-medium">Description About Task*</span>                        </label>
+                            <span className="label-text font-medium text-[#B58130]">Description About Task*</span>                        </label>
                         <textarea {...register("description", { required: true })}
-
+                            data-aos="fade-down"
                             className="textarea textarea-bordered h-24"
                             placeholder="Write a short description about the Task"></textarea>
                     </div>
                     <div className="form-control my-6 justify-center items-center">
                         <label className="label">
-                            <span className="label-text font-medium">Provide Author Image*</span>                        </label>
+                            <span className="label-text font-medium text-[#B58130]">Provide Author Image*</span>                        </label>
                         <input {...register("taskImage", { required: true })}
 
                             type="file"
