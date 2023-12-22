@@ -57,7 +57,7 @@ const AllTasks = () => {
             <title>All Tasks || Task Management</title>
         </Helmet>
         <div className="divider"></div>
-        <h1 className="text-center text-2xl md:text-3xl font-bold my-2">All Tasks</h1>
+        <h1 className="text-center text-2xl md:text-3xl font-bold my-2" data-aos="fade-down">All Tasks</h1>
         <div className="divider"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 items-center mb-10">
             { tasks.length ?
@@ -82,8 +82,8 @@ const AllTasks = () => {
                     </div>
                 </div>)) :
                 ( <div className="text-center mx-auto md:w-[700px] lg:w-[1100px]">
-                <h1 className="font-bold loading-10  text-3xl">
-                    <span className="font-extrabold text-red-600" data-aos="fade-down"> Oops, </span> <br />
+                <h1 className="font-bold loading-10  text-3xl" data-aos="fade-down">
+                    <span className="font-extrabold text-red-600" > Oops, </span> <br />
                     it seems like there are currently no <br /> tasks has been Created. Please <br /> Create tasks to see them.
                 </h1>
             </div>)
