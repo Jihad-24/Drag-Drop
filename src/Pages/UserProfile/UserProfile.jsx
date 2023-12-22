@@ -42,9 +42,9 @@ const UserProfile = () => {
                             }
                         </figure>
                         <div className="card-body items-center text-center">
-                            <h2 className="card-title">Name: {userData?.name}</h2>
-                            <p className="text-[#757575] font-bold">Email: {userData?.email}</p>
-                            <div className="card-actions">
+                            <h2 className="card-title" data-aos="fade-right">Name: {userData?.name}</h2>
+                            <p className="text-[#757575] font-bold" data-aos="fade-left">Email: {userData?.email}</p>
+                            <div className="card-actions" data-aos="fade-down">
                                 <Link to={`/dashboard/userProfile/${userData?._id}`}>
                                 <button className="btn btn-primary">Update Profile</button></Link>
                             </div>
@@ -52,20 +52,12 @@ const UserProfile = () => {
                     </div>
                 </div>}
             {isLoading &&
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='flex justify-center items-center'>
                     <div className="flex flex-col gap-4 w-52">
                         <div className="skeleton h-32 w-full"></div>
                         <div className="skeleton h-4 w-28"></div>
                         <div className="skeleton h-4 w-full"></div>
                         <div className="skeleton h-4 w-full"></div>
-                    </div>
-                    <div className="hidden md:block">
-                        <div className="flex flex-col gap-4 w-52">
-                            <div className="skeleton h-32 w-full"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                            <div className="skeleton h-4 w-full"></div>
-                            <div className="skeleton h-4 w-full"></div>
-                        </div>
                     </div>
                 </div>}
         </div>

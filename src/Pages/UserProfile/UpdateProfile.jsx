@@ -115,22 +115,14 @@ const UpdateProfile = () => {
                 }
             </div>
             {isLoading &&
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                    <div className="flex flex-col gap-4 w-52">
-                        <div className="skeleton h-32 w-full"></div>
-                        <div className="skeleton h-4 w-28"></div>
-                        <div className="skeleton h-4 w-full"></div>
-                        <div className="skeleton h-4 w-full"></div>
-                    </div>
-                    <div className="hidden md:block">
-                        <div className="flex flex-col gap-4 w-52">
-                            <div className="skeleton h-32 w-full"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                            <div className="skeleton h-4 w-full"></div>
-                            <div className="skeleton h-4 w-full"></div>
-                        </div>
-                    </div>
-                </div>}
+                  <div className='flex justify-center items-center'>
+                  <div className="flex flex-col gap-4 w-52">
+                      <div className="skeleton h-32 w-full"></div>
+                      <div className="skeleton h-4 w-28"></div>
+                      <div className="skeleton h-4 w-full"></div>
+                      <div className="skeleton h-4 w-full"></div>
+                  </div>
+              </div>}
         </div>
     );
 };
