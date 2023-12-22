@@ -90,7 +90,7 @@ const Register = () => {
                 <title>SignUp || Fitness Tracker</title>
             </Helmet>
             <div className="">
-                <h1 className="text-4xl mt-10 font-bold text-center" >Register your account!</h1>
+                <h1 className="text-4xl mt-10 font-bold text-center" data-aos="fade-down">Register your account!</h1>
                 <form
                     onSubmit={handleRegister}
                     className='card-body md:w-3/4 lg:w-1/2 mx-auto'
@@ -105,7 +105,7 @@ const Register = () => {
                         <label className="label">
                             <span className='label-text'>Your Name</span>
                         </label>
-                        <input
+                        <input data-aos="fade-left"
                             type="text"
                             name="name"
                             placeholder="Enter your name"
@@ -115,7 +115,7 @@ const Register = () => {
                         <label className="label">
                             <span className='label-text'>Email Address</span>
                         </label>
-                        <input
+                        <input data-aos="fade-right"
                             type="email"
                             name="email"
                             placeholder="Enter Your Email Address"
@@ -125,7 +125,7 @@ const Register = () => {
                         <label className="label">
                             <span className='label-text'>Password</span>
                         </label>
-                        <input
+                        <input data-aos="fade-left"
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter Your Password"
@@ -140,7 +140,7 @@ const Register = () => {
                         <label className="label">
                             <span className='label-text'>Your photoURL</span>
                         </label>
-                        <input
+                        <input data-aos="fade-right"
                             type="text"
                             name="photoURL"
                             placeholder="Enter Your photoURL"
