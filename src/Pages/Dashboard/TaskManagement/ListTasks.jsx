@@ -71,7 +71,7 @@ const Section = ({ status, tasks, setTasks, todos, inPrograss, completes }) => {
         const updatedTask = {
             status: status,
         };
-        fetch(`http://localhost:3001/tasks/${_id}`, {
+        fetch(`https://drag-drop-server.vercel.app/tasks/${_id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'
@@ -100,8 +100,8 @@ const Section = ({ status, tasks, setTasks, todos, inPrograss, completes }) => {
     };
 
 
-    return <div ref={drop} 
-    className={`w-full md:w-44 lg:w-72 rounded-md p-2 ${isOver ? "bg-slate-300" : "bg-slate-100"}`}>
+    return <div ref={drop}
+        className={`w-full md:w-44 lg:w-72 rounded-md p-2 ${isOver ? "bg-slate-300" : "bg-slate-100"}`}>
         <Header text={text} bg={bg} count={taskToMap?.length} />
         {taskToMap?.length > 0 && taskToMap.map((task) => <Task key={task._id}
             task={task}
@@ -135,7 +135,7 @@ const Task = ({ task, tasks, setTasks }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result?.isConfirmed) {
-                fetch(`http://localhost:3001/tasks/${id}`, {
+                fetch(`https://drag-drop-server.vercel.app/tasks/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -163,9 +163,9 @@ const Task = ({ task, tasks, setTasks }) => {
                 </div>
             </div>
             <div>
-            <div className="badge badge-secondary">{task.priority}</div>
-            <p>{task.titleName}</p>
-            {/* <p>{task.authorName}</p> */}
+                <div className="badge badge-secondary">{task.priority}</div>
+                <p>{task.titleName}</p>
+                {/* <p>{task.authorName}</p> */}
             </div>
 
         </div>

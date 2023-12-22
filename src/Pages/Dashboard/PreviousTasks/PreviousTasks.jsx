@@ -9,7 +9,7 @@ import useAuth from "../../../hooks/useAuth";
 const PreviousTasks = () => {
     const [tasks, setTasks] = useState([]);
     const axiosPublic = useAxiosPublic();
-    const {user}=useAuth();
+    const { user } = useAuth();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const PreviousTasks = () => {
             .catch(error => {
                 console.log(error.message);
             })
-    }, [axiosPublic,user])
+    }, [axiosPublic, user])
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -38,7 +38,7 @@ const PreviousTasks = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result?.isConfirmed) {
-                fetch(`http://localhost:3001/tasks/${id}`, {
+                fetch(`https://drag-drop-server.vercel.app/tasks/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -67,34 +67,34 @@ const PreviousTasks = () => {
             <h1 className="text-center text-2xl md:text-3xl font-bold my-2" data-aos="fade-down">Previous Tasks</h1>
             <div className="divider"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 items-center">
-            {!isLoading && !tasks.length ?
+                {!isLoading && !tasks.length ?
                     (<div className="text-center col-span-1 md:col-span-2 ">
                         <h1 className="font-bold loading-10  text-3xl" data-aos="fade-down">
                             <span className="font-extrabold text-red-600" > Oops, </span> <br />
                             it seems like there are currently no <br /> tasks has been Created. Please <br /> Create tasks to see them.
                         </h1>
                     </div>)
-                        :
-                        (tasks.map(task => <div key={task._id}
-                            className="card bg-base-100 shadow-xl">
-                            <figure><img src={task.taskImage} className="h-40" alt="Shoes" /></figure>
-                            <div className="card-body ">
-                                <h2 className="card-title">
-                                    {task.titleName}
-                                    <div className="badge badge-primary">{task.status}</div>
-                                </h2>
-                                <p><span className="font-medium">Author :</span> <div className="badge badge-accent">{task.authorName}</div></p>
-                                <p><span className="font-medium">Priority :</span> <div className="badge badge-secondary">{task.priority}</div></p>
-                                <p><span className="font-medium">Deadlines :</span> <div className="badge badge-warning">{task.deadlines}</div></p>
-                                <p><span className="font-medium">Description :</span> {task.description}</p>
-                                <div className="card-actions justify-end">
-                                    <Link to={`/dashboard/Previoustask/${task._id}`}>
-                                        <button className=" btn btn-secondary btn-outline">Edit</button>
-                                    </Link>
-                                    <button onClick={() => handleDelete(task._id)} className=" btn btn-error btn-outline">Delete</button>
-                                </div>
+                    :
+                    (tasks.map(task => <div key={task._id}
+                        className="card bg-base-100 shadow-xl">
+                        <figure><img src={task.taskImage} className="h-40" alt="Shoes" /></figure>
+                        <div className="card-body ">
+                            <h2 className="card-title">
+                                {task.titleName}
+                                <div className="badge badge-primary">{task.status}</div>
+                            </h2>
+                            <p><span className="font-medium">Author :</span> <div className="badge badge-accent">{task.authorName}</div></p>
+                            <p><span className="font-medium">Priority :</span> <div className="badge badge-secondary">{task.priority}</div></p>
+                            <p><span className="font-medium">Deadlines :</span> <div className="badge badge-warning">{task.deadlines}</div></p>
+                            <p><span className="font-medium">Description :</span> {task.description}</p>
+                            <div className="card-actions justify-end">
+                                <Link to={`/dashboard/Previoustask/${task._id}`}>
+                                    <button className=" btn btn-secondary btn-outline">Edit</button>
+                                </Link>
+                                <button onClick={() => handleDelete(task._id)} className=" btn btn-error btn-outline">Delete</button>
                             </div>
-                        </div>))
+                        </div>
+                    </div>))
                 }
             </div>
             {isLoading &&
