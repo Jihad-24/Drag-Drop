@@ -66,18 +66,18 @@ const Login = () => {
                 <title>Login || Fitness Tracker</title>
             </Helmet>
             <div >
-                <h1 className="text-4xl mt-10 font-bold text-center" >Login your account!</h1>
+                <h1 className="text-4xl mt-10 font-bold text-center" data-aos="fade-down">Login your account!</h1>
                 <form
                     onSubmit={handleLogin}
                     className='card-body md:w-3/4 lg:w-1/2 mx-auto'>
                     {
-                        loginError && <p className="text-red-700">{loginError}</p>
+                        loginError && <p className="text-red-700" data-aos="fade-right">{loginError}</p>
                     }
                     <div className="form-control " >
                         <label className="label">
                             <span className='label-text'>Email Address</span>
                         </label>
-                        <input
+                        <input data-aos="fade-left"
                             type="email"
                             name="email"
                             placeholder="Enter Your Email Address"
@@ -87,7 +87,7 @@ const Login = () => {
                         <label className="label">
                             <span className='label-text'>Password</span>
                         </label>
-                        <input
+                        <input data-aos="fade-right"
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter Your Password"
@@ -104,9 +104,9 @@ const Login = () => {
                                 Forgot password?</a>
                         </label>
                     </div>
-                    <div className="form-control mt-4" >
+                    <div className="form-control mt-4" data-aos="fade-down">
 
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn btn-primary" >Login</button>
                         <SocialLogin></SocialLogin>
 
                     </div>
