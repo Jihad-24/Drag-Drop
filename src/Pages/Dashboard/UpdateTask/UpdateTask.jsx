@@ -20,7 +20,7 @@ const UpdateTask = () => {
         axiosPublic.get('/tasks')
             .then(res => {
                 const data = res.data;
-                const fTask = data.filter(ft => ft._id == id)
+                const fTask = data?.filter(ft => ft._id == id)
                 // console.log(res.data);
                 setTask(fTask)
             })

@@ -23,7 +23,7 @@ const ListTasks = ({ tasks, setTasks }) => {
     const statuses = ["todo", "inprograss", "completes"]
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-5 lg:gap-10">
             {
                 statuses.map((status, index) =>
                     <Section key={index}
@@ -101,7 +101,7 @@ const Section = ({ status, tasks, setTasks, todos, inPrograss, completes }) => {
 
 
     return <div ref={drop} 
-    className={`w-full md:w-40 lg:w-64 rounded-md p-2 ${isOver ? "bg-slate-200" : ""}`}>
+    className={`w-full md:w-44 lg:w-72 rounded-md p-2 ${isOver ? "bg-slate-300" : "bg-slate-100"}`}>
         <Header text={text} bg={bg} count={taskToMap?.length} />
         {taskToMap?.length > 0 && taskToMap.map((task) => <Task key={task._id}
             task={task}
@@ -155,14 +155,19 @@ const Task = ({ task, tasks, setTasks }) => {
         })
     }
 
-    return <div ref={drag} className={`relative p-4 mt-8 shadow-md rounded-md cursor-grab ${isDragging ? "opacity-25" : "opacity-100"}`} onClick={() => handleDelete(task._id)}>
+    return <div ref={drag} className={`relative p-4 h-24 mt-8 shadow-md rounded-xl cursor-grab ${isDragging ? "opacity-25" : "opacity-100"}`} onClick={() => handleDelete(task._id)}>
         <div className="flex gap-3 items-center">
             <div className="avatar placeholder">
                 <div className="bg-neutral text-neutral-content rounded-full w-8">
                     <img src={task.taskImage} className="text-xs" alt="" />
                 </div>
             </div>
-            <p>{task.authorName}</p>
+            <div>
+            <div className="badge badge-secondary">{task.priority}</div>
+            <p>{task.titleName}</p>
+            {/* <p>{task.authorName}</p> */}
+            </div>
+
         </div>
         <button className="absolute bottom-1 right-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">

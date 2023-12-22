@@ -3,26 +3,30 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import useAuth from "../../hooks/useAuth";
 
 
 const AllTasks = () => {
 
     const [tasks, setTasks] = useState([]);
     const axiosPublic = useAxiosPublic();
+    const {user}=useAuth();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         setIsLoading(true)
         axiosPublic.get('/tasks')
             .then(res => {
-                // console.log(res.data);
-                setTasks(res.data)
+                const data = res.data;
+                // console.log(data);
+                const findTask = data?.filter(item => item.email == user?.email)
+                setTasks(findTask)
                 setIsLoading(false)
             })
             .catch(error => {
                 console.log(error.message);
             })
-    }, [axiosPublic])
+    }, [axiosPublic,user])
 
     const handleDelete = (id) => {
         Swal.fire({
