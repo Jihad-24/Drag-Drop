@@ -44,9 +44,9 @@ const Profile = () => {
                             }
                         </figure>
                         <div className="card-body items-center text-center">
-                            <h2 className="card-title">Name: {userData?.name}</h2>
-                            <p className="text-[#757575] font-bold">Email: {userData?.email}</p>
-                            <div className="card-actions">
+                            <h2 className="card-title" data-aos="fade-left">Name: {userData?.name}</h2>
+                            <p className="text-[#757575] font-bold" data-aos="fade-right">Email: {userData?.email}</p>
+                            <div className="card-actions" data-aos="fade-down">
                                 <Link to={`/dashboard/userProfile/${userData?._id}`}>
                                 <button className="btn btn-primary">Update Profile</button></Link>
                             </div>
