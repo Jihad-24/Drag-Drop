@@ -6,12 +6,12 @@ const Featured = () => {
     return (
         <div className="my-12">
             <div className="text-center space-y-4 mb-8">
-                <h1 className="font-bold text-5xl">Our Task<span className="text-blue-500"> Features & Benefit</span></h1>
-                <p className="font-bold text-[#494848]">Transform Your Task Journey with Task Management <br /> Your Ultimate Task Management Destination</p>
+                <h1 className="font-bold text-5xl" data-aos="fade-up">Our Task<span className="text-blue-500"> Features & Benefit</span></h1>
+                <p className="font-bold text-[#494848]" data-aos="fade-down">Transform Your Task Journey with Task Management <br /> Your Ultimate Task Management Destination</p>
             </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-left">
                         <figure className="pt-8">
                             <img src="https://i.ibb.co/XDHs98g/SOFTWARE-TEAMS-2x.png" className="h-60" alt="" />
                         </figure>
@@ -24,7 +24,7 @@ const Featured = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-down">
                         <figure className="pt-8">
                           <img src="https://i.ibb.co/PM3y7my/MARKETING-CALENDAR-2x.png" alt="" className="h-60" />
                         </figure>
@@ -38,7 +38,7 @@ const Featured = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-right">
                         <figure className="pt-8">
                             <img src="https://i.ibb.co/yWcw6cb/OPERATIONS-2x.png" className="h-60" alt="" />
                         </figure>
@@ -52,7 +52,7 @@ const Featured = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-left">
                         <figure className="pt-8">
                            <img src="https://i.ibb.co/XZm8dSd/PRODUCT-TEAMS-2x.png" className="h-60" alt="" />
                         </figure>
@@ -65,7 +65,7 @@ const Featured = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-up">
                         <figure className="pt-8">
                             <img src="https://i.ibb.co/VqBms74/DESIGN-TEAMS-2x.png" className="h-60" alt="" />
                         </figure>
@@ -78,7 +78,7 @@ const Featured = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl" data-aos="fade-right">
                         <figure className="pt-8">
                            <img src="https://i.ibb.co/FzFr68b/TRACK-PROGRESS-2x.png" className="h-60" alt="" />
                         </figure>
