@@ -68,7 +68,8 @@ const AllTasks = () => {
             <div className="divider"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 items-center mb-10">
                 {!isLoading && !tasks.length ?
-                    (<div className="text-center mx-auto md:w-[700px] lg:w-[1100px]">
+                    (
+                    <div className="text-center col-span-1 md:col-span-2 lg:col-span-3">
                         <h1 className="font-bold loading-10  text-3xl" data-aos="fade-down">
                             <span className="font-extrabold text-red-600" > Oops, </span> <br />
                             it seems like there are currently no <br /> tasks has been Created. Please <br /> Create tasks to see them.
@@ -98,20 +99,20 @@ const AllTasks = () => {
                 }
             </div>
             {isLoading &&
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6'>
-                    <div className="flex flex-col gap-4 w-52">
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 items-center mb-10'>
+                    <div className="flex justify-center items-center flex-col gap-4 w-52">
                         <div className="skeleton h-32 w-full"></div>
                         <div className="skeleton h-4 w-28"></div>
                         <div className="skeleton h-4 w-full"></div>
                         <div className="skeleton h-4 w-full"></div>
                     </div>
-                    <div className="flex flex-col gap-4 w-52">
+                    <div className="flex flex-col justify-center items-center gap-4 w-52">
                         <div className="skeleton h-32 w-full"></div>
                         <div className="skeleton h-4 w-28"></div>
                         <div className="skeleton h-4 w-full"></div>
                         <div className="skeleton h-4 w-full"></div>
                     </div>
-                    <div className="flex flex-col gap-4 w-52">
+                    <div className="flex flex-col gap-4 justify-center items-center w-52">
                         <div className="skeleton h-32 w-full"></div>
                         <div className="skeleton h-4 w-28"></div>
                         <div className="skeleton h-4 w-full"></div>

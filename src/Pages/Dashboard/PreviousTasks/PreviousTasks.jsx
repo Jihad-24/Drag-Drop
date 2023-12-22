@@ -68,7 +68,7 @@ const PreviousTasks = () => {
             <div className="divider"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 items-center">
             {!isLoading && !tasks.length ?
-                    (<div className="text-center mx-auto md:w-[700px] lg:w-[1100px]">
+                    (<div className="text-center col-span-1 md:col-span-2 ">
                         <h1 className="font-bold loading-10  text-3xl" data-aos="fade-down">
                             <span className="font-extrabold text-red-600" > Oops, </span> <br />
                             it seems like there are currently no <br /> tasks has been Created. Please <br /> Create tasks to see them.

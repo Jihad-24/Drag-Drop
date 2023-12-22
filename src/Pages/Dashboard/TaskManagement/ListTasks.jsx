@@ -158,7 +158,7 @@ const Task = ({ task, tasks, setTasks }) => {
     return <div ref={drag} className={`relative p-4 h-24 mt-8 shadow-md rounded-xl cursor-grab ${isDragging ? "opacity-25" : "opacity-100"}`} onClick={() => handleDelete(task._id)}>
         <div className="flex gap-3 items-center">
             <div className="avatar placeholder">
-                <div className="bg-neutral text-neutral-content rounded-full w-8">
+                <div className="bg-neutral text-neutral-content rounded-full w-14">
                     <img src={task.taskImage} className="text-xs" alt="" />
                 </div>
             </div>

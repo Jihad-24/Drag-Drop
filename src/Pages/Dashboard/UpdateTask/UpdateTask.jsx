@@ -53,14 +53,14 @@ const UpdateTask = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `added to the classes`,
+                    title: `Task has been Updated`,
                     showConfirmButton: false,
                     timer: 1500
                 });
                 navigate('/dashboard/Previoustask')
             }
         }
-        console.log('with image url', res.data);
+        // console.log('with image url', res.data);
     };
     return (
         <div>

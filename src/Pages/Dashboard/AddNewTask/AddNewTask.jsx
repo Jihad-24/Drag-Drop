@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import useAuth from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -13,6 +14,7 @@ const AddNewTask = () => {
     // console.log(user.email);
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
+    const navigate=useNavigate();
 
     const onSubmit = async (data) => {
         const imageFile = { image: data.taskImage[0] }
@@ -39,13 +41,14 @@ const AddNewTask = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `added to the classes`,
+                    title: `Added to the Task Management`,
                     showConfirmButton: false,
                     timer: 1500
                 });
+                navigate('/dashboard/taskmanagement')
             }
         }
-        console.log('with image url', res.data);
+        // console.log('with image url', res.data);
     };
     return (
         <div>
