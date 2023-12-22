@@ -11,8 +11,8 @@ const UserHome = () => {
             <Helmet>
                 <title>UserHome || Task Management</title>
             </Helmet>
-            <h1 className="md:text-3xl text-center text-xl">
-                <span className='text-blue-900'>Hi, Welcome {user?.displayName ? user.displayName : 'Back'}!</span>
+            <h1 className="md:text-3xl text-center text-xl" data-aos="fade-up">
+                <span className='text-blue-900' >Hi, Welcome {user?.displayName ? user.displayName : 'Back'}!</span>
             </h1>
             <div className="mt-12">
                 <UserProfile/>
